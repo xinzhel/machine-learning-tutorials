@@ -1,0 +1,68 @@
+1. Title: Primary mushroom data
+
+2. Sources:
+	(a) Mushroom species drawn from source book:
+		Patrick Hardin.Mushrooms & Toadstools.
+	    Zondervan, 1999
+	(b) Inspired by this mushroom data:
+		Jeff Schlimmer.Mushroom Data Set. Apr. 1987.
+		url:https://archive.ics.uci.edu/ml/datasets/Mushroom.
+	(c) Repository containing the related Python scripts and all the data sets: https://mushroom.mathematik.uni-marburg.de/files/ 
+	(d) Author: Dennis Wagner
+	(e) Date: 05 September 2020
+
+3. Relevant information:
+	This dataset includes 173 species of mushrooms with caps from various families and one
+	entry for each species.
+	Each species is identified as definitely edible, definitely poisonous, or of unknown
+	edibility and not recommended (the latter class was combined with the poisonous class).
+	Of the 20 variables, 17 are nominal and 3 are metrical. The values of each nominal variable
+	are a set of possible values and for the metrical variables a range of possible values.
+
+4. Data generation:
+	The related Python project (Sources (c)) contains a Python module primary_data_generation.py
+	used to generate a first version of this data from the HTML version of the book (Sources (a))
+	found in primary_data_generated.csv.
+	The primary data is cleaned and enriched by going through the book manually resulting in
+	primary_data_edited.csv (used for the simulation of the secondary data).
+	
+
+5. Class information:
+    1. family		String of the name of the family of mushroom species (multinomial)
+	2. name			String of the of the mushroom species (multinomial)
+	3. class		poisonous=p, edibile=e (binary)
+
+6. Variable Information:
+   (n: nominal, m: metrical; nominal values as sets of values)
+   1. cap-diameter (m):			float number(s) in cm
+								two values=min max, one value=mean
+   2. cap-shape (n):            bell=b, conical=c, convex=x, flat=f,
+                                sunken=s, spherical=p, others=o
+   3. cap-surface (n):          fibrous=i, grooves=g, scaly=y, smooth=s,
+								shiny=h, leathery=l, silky=k, sticky=t,
+								wrinkled=w, fleshy=e
+   4. cap-color (n):            brown=n, buff=b, gray=g, green=r, pink=p,
+								purple=u, red=e, white=w, yellow=y, blue=l, 
+								orange=o,  black=k
+   5. does-bruise-bleed (n):	bruises-or-bleeding=t,no=f
+   6. gill-attachment (n):      adnate=a, adnexed=x, decurrent=d, free=e, 
+								sinuate=s, pores=p, none=f, unknown=?
+   7. gill-spacing (n):         close=c, distant=d, none=f
+   8. gill-color (n):           see cap-color + none=f
+   9. stem-height (m):			float number(s) in cm
+								two values=min max, one value=mean
+   10. stem-width (m):			float number(s) in mm
+								two values=min max, one value=mean	   
+   11. stem-root (n):           bulbous=b, swollen=s, club=c, cup=u, equal=e,
+                                rhizomorphs=z, rooted=r
+   12. stem-surface (n): 		see cap-surface + none=f
+   13. stem-color (n):			see cap-color + none=f
+   14. veil-type (n):           partial=p, universal=u
+   15. veil-color (n):          see cap-color + none=f
+   16. has-ring (n):            ring=t, none=f
+   17. ring-type (n):           cobwebby=c, evanescent=e, flaring=r, grooved=g, 
+							    large=l, pendant=p, sheathing=s, zone=z, scaly=y, movable=m, none=f, unknown=?
+   18. spore-print-color (n):   see cap color
+   19. habitat (n):             grasses=g, leaves=l, meadows=m, paths=p, heaths=h,
+                                urban=u, waste=w, woods=d
+   20. season (n):				spring=s, summer=u, autumn=a, winter=w
