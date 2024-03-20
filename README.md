@@ -60,15 +60,21 @@ Go through the code snippets and details in [this blog post](https://medium.com/
 
 
 ## Topic 6: Statistical Concepts for Modeling
-Go through the basic statistical concepts in [the notebook: 2-stat](2-basic-stat.ipynb)
-* Basic ideas of random variable, distribution, sample, sample statistics: This is important to understand the questions, e.g., how to infer sampling distributions? From direct estimation of probabilities via averaging to estimation of indirect parameters (e.g., $\lambda$ for Poisson Distribution) to estimation of parameters of conditional probability distribution.
-* Assessing the properties of data distributions to match suitable ML algorithms
+**What are other use cases of statistics in ML?** statistical inference plays an essential in machine learning, including statistical estimation of parametric models, machine learning inference/predictions. 
+* You probably feel confused of these concepts. Go through the blog post for A BIG PICTURE: [Statistical Inference v.s. Statistical Estimation v.s. Machine Learning Inference](https://medium.com/@sergioli/statistical-inference-v-s-statistical-estimation-v-s-ml-inference-03f79404645a).
+* Go through the very basic statistical concepts (sample, probability distribution, PDF, PMF, and so on) in [the notebook: 2-stat](2-basic-stat.ipynb). This is important to understand the questions:
+  *  How to infer sampling distributions? From direct estimation of probabilities via averaging to estimation of indirect parameters (e.g., $\lambda$ for Poisson Distribution) to estimation of parameters of conditional probability distribution.
+  *  Assessing the properties of data distributions to match suitable ML algorithms
 *  **Why is Central Limit Theorem useful for machine learning?**
+*  One Widely Used Statistical Estimation Principle: [MLE](https://medium.com/@sergioli/statistical-estimation-for-machine-learning-ad1d6135ba62)
+   *  This is related to the topics of supervised learning.
+  <!-- > Review it from the whole picture with one important question:  After the objective function is defined to estimate variable $p$, how it relates to update model parameters, e.g., weights of linear regression ?  Take Neural Network as an example. Firstly, we need to understand parameters in neural network are all chained via a stack of functions in each neuron of each layer. For example, if we take one step back, $p$ is commonly the output of logistic function.
+    $$p = h_\theta=\frac{1}{1+e^{-\theta^{T} X}} $$
+    * Secondly, since they are all chained together, we can update every parameters or, professionally saying, optimize $\theta$ in neural network by utilizing gradient from auto differentiation (This process is also called backward propagation). -->
 
-
-## Topic 5: Unsupervised Learning for Clustering
+## Topic 7: Unsupervised Learning for Clustering
   + $x$ -> Unknown $y$ 
-  + Clustering: See [3 - Clustering](3-clustering.ipynb)
+  + Clustering: [K-means](3-clustering-kmeans.ipynb); [DB-SCAN, Hierarchical Clustering](3-clustering-others.ipynb); [Evaluation](3-clustering-eval.ipynb)
   + Dimension Reduction: See [4 - Dimensionality Reduction](4-dim-reduct.ipynb)
 
 ===========================
