@@ -1,28 +1,32 @@
 import numpy as np
+from sklearn import metrics
 
 def euclidean_distance(a, b):
     """Calculate the Euclidean distance between two points."""
     return np.sqrt(np.sum((a - b) ** 2))
 
-def calculate_distortion(X, centroids, labels):
+def calculate_distortion(X, labels):
     """
     Calculate the distortion metric for the given dataset and clustering.
     
     Parameters:
     - X: numpy array of shape (n_samples, n_features), the dataset.
-    - centroids: numpy array of shape (n_clusters, n_features), the cluster centroids.
-    - labels: numpy array of shape (n_samples,), the cluster labels for each sample.
+    - labels: numpy array of shape (n_samples,), the cluster labels for each sample. Note that the label may not start from 0
     
     Returns:
     - distortion: float, the calculated distortion metric.
     """
     distortion = 0.0
+    # calculate centroids
+    unique_labels = np.unique(labels)
+    centroids = np.array([np.mean(X[labels == label], axis=0) for label in unique_labels])
+    label_to_centroid = {label: centroid for label, centroid in zip(unique_labels, centroids)}
+
     for i, point in enumerate(X):
-        centroid = centroids[labels[i]]
-        print(point.shape)
-        print(centroid.shape)
-        distortion += euclidean_distance(point, centroid) ** 2
-    return distortion / len(X)
+        # find the centroid of the cluster
+        centroid = label_to_centroid[labels[i]]
+        distortion += np.sum((point - centroid) ** 2)
+    return distortion
 
 def calculate_purity(y, y_pred):
     """
@@ -36,12 +40,15 @@ def calculate_purity(y, y_pred):
     - The purity score as a float.
     """
     cm = metrics.cluster.contingency_matrix(y, y_pred)
-    print(cm)
-    # purity: note that we assume that we match the predicted label with the ground truth by `amax`
-    correct_predictions = np.amax(cm, axis=0) # Assign each cluster to the class most frequent in the cluster
-    score =  np.sum(correct_predictions) / np.sum(cm) 
+    # print("contingency Matrix:", cm)
+    #     1, 2
+    # A  [[1 1]
+    # B   [0 3]]
 
-    return score
+    correct_predictions = np.amax(cm, axis=0) # Assign each cluster to the class most frequent in the cluster
+    purity_score =  np.sum(correct_predictions) / np.sum(cm) 
+    # print(f"Purity Score: {purity_score}")
+    return purity_score
 
 def silhouette_score(X, labels):
     """
