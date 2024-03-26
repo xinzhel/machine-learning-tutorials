@@ -55,8 +55,6 @@ Most of the workshop materials are made by myself because I want to give you
   * ONLY leave me messages on OnTrack for the grading issues.
     * If I do not repond to you in 4 days or it is VERY EMERGENT, send a Team-message to xinzhe.li@deakin.edu.au.
 * How to CONTACT me?
-  <!-- * Workshops at Burwood: Wed 13:00-14:50 Burwood LC5.105; Wed 16:00-17:50 LC2.100
-  * [Online Workshop](https://teams.microsoft.com/l/message/19:a2a4a88a0b52481fb158d02901417913@thread.tacv2/1709172461138?tenantId=d02378ec-1688-46d5-8540-1c28b5f470f6&groupId=bdeccde9-d8bd-424e-9c17-bd5e2c198d8d&parentMessageId=1709172461138&teamName=SIT307-SIT720%20Machine%20Learning%20T1%202024&channelName=SIT307_SIT720_OnlineWorkshop_Thur_6pm_7.50pm&createdTime=1709172461138): Thu 18:00-19:50  -->
   * Online Helphub session ([The link](https://teams.microsoft.com/l/meetup-join/19:33c1111d96654650bd2fb52943701d25@thread.tacv2/1709789549124?context=%7B%22Tid%22:%22d02378ec-1688-46d5-8540-1c28b5f470f6%22,%22Oid%22:%224ba13cd8-3d96-4211-a014-6ad747495e5a%22%7D) will be given soom): Thu 17:00pm-18:00pm
   * During/After this trimester: Leave comments under my blog post or make a pull request on Github for technical issues. (Do not report the errors of CloudDeakin to me.)
 
