@@ -1,8 +1,49 @@
 
 import numpy as np
+def var(x):
+    """ Sample Variance of a variable.
+    It measures how spread out the data points are around the mean by
+     the average of the squared differences of each data point from the sample mean.
+    Equation: var(x) = Σ (x_i - mean(x))^2 / n
+    Equivalent to: var(x) = E[(x - E[x])^2]
+    Simplified to: var(x) = E[x^2] - E[x]^2
+    Args:
+        x (np.ndarray): A NumPy array."""
+    
+    return np.sum((x- x.mean())**2)/len(x)
 
-def generate_sample(sample_size, pdf_or_pmf=np.random.uniform):
-    return [pdf_or_pmf() for _ in range(sample_size)]
+def covar(x, y):
+    """ Covariance of two variables.
+    It measures how two variables change together by 
+     the average of the product of the differences of each data point from the sample mean.
+    Equation: cov(x, y) = Σ (x_i - mean(x)) * (y_i - mean(y)) / n
+    Equivalent to: cov(x, y) = E[(x - E[x]) * (y - E[y])] 
+    Simplified to: cov(x, y) = E[xy] - E[x]E[y]
+    Args:
+        x, y (np.ndarray): Two NumPy arrays of the same length."""
+    return np.sum((x - x.mean())*(y - y.mean()))/len(x)
+
+def covar_matrix(X):
+    """ Covariance matrix of a dataset.
+    It is a square matrix that describes the covariance between two or more variables in a dataset.
+    Args:
+        X (np.ndarray): A NumPy array of shape (n_samples, n_features)."""
+    n_samples, n_features = X.shape
+    covar_matrix = np.zeros((n_features, n_features))
+    for i in range(n_features):
+        for j in range(n_features):
+            covar_matrix[i, j] = covar(X[:, i], X[:, j])
+    return covar_matrix
+
+def covar_matrix_efficient(X):
+    """ Covariance matrix of a dataset.
+    Equation: cov_matrix = Σ (X_i - mean(X, axis=0)).T * (X_i - mean(X, axis=0)) / n
+    Simplified to: cov_matrix = E[X.T * X] - E[X].T * E[X]
+    """
+    mu = X.mean(axis=0) # shape: (n_features,)
+    sigma = X.std(axis=0)  # shape: (n_features,) 
+    Xnorm = (X - mu)/sigma # data shape: (n_sample, n_features)
+    return np.dot(Xnorm.T, Xnorm)/len(Xnorm) 
 
 def find_position_for_percentile(percentile, sorted_data):
     """ Returns the position of a given percentile in a sorted list of data.

@@ -73,9 +73,21 @@ Go through the code snippets and details in [this blog post](https://medium.com/
     * Secondly, since they are all chained together, we can update every parameters or, professionally saying, optimize $\theta$ in neural network by utilizing gradient from auto differentiation (This process is also called backward propagation). -->
 
 ## Topic 7: Unsupervised Learning for Clustering
-  + $x$ -> Unknown $y$ 
-  + Clustering: [K-means](3-clustering-kmeans.ipynb); [DB-SCAN, Hierarchical Clustering](3-clustering-others.ipynb); [Evaluation](3-clustering-eval.ipynb)
-  + Dimension Reduction: See [4 - Dimensionality Reduction](4-dim-reduct.ipynb)
+* Pattern recognition
+* No labels, i.e., no concrete tasks
+### Topic 7.1: Clustering
+  + [K-means](3-clustering-kmeans.ipynb)
+  + [DB-SCAN, Hierarchical Clustering](3-clustering-others.ipynb); 
+  + [Evaluation](3-clustering-eval.ipynb)
+
+### Topic 7.2: Dimension Reduction
+* When do we want to perform dimensionality reduction?
+    <!-- + preserve semantics of high-dimensional data in low-dimensional subspace
+    + overcome the curse of dimensionality: "When the dimensionality increases, the volume of the space increases so fast that the available data become sparse" -->
+* Idea 1: Focus on directions that maximize the variance of data
+<!-- * Idea 2: Removing correlation, i.e., a linear relationship between variables? (Redundant information) -->
+  + Go through [the post](https://medium.com/@sergioli/principal-component-analysis-an-intuitive-mathematically-comprehensive-and-step-by-step-coding-e40f8a7f6417)
+  + See [the notebook for constructing PCA](4-dim-reduct-pca.ipynb)
 
 ===========================
 
