@@ -39,6 +39,26 @@ def k_means(X, k, iterations=100):
     
     return centroids, assignments
 
+def k_means(X, k, iterations=100):
+    """The K-means algorithm."""
+    # Step 1: Initialization
+    centroids = initialize_centroids(X, k)
+    
+    for _ in range(iterations):
+        # Step 2: Assignment
+        assignments = assign_points_to_centroids(X, centroids)
+        
+        # Step 3: Update
+        new_centroids = update_centroids(X, assignments, k)
+        
+        # Check for convergence (if centroids do not change)
+        if np.all(centroids == new_centroids):
+            break
+        
+        centroids = new_centroids
+    
+    return centroids, assignments
+
 def predict(X_new, centroids):
     """
     Assign new data points to the nearest centroid.
