@@ -1,6 +1,6 @@
 import numpy as np
 
-def ols_estimate(X, Y):
+def ols_estimate_for_linear_regression(X, Y):
     """
     Calculates the Ordinary Least Squares (OLS) estimates of the intercept (beta_0) 
     and slope (beta_1) for a simple linear regression model. The model assumes a 

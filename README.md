@@ -89,11 +89,7 @@ Go through the code snippets and details in [this blog post](https://medium.com/
   + Go through [the post](https://medium.com/@sergioli/principal-component-analysis-an-intuitive-mathematically-comprehensive-and-step-by-step-coding-e40f8a7f6417)
   + See [the notebook for constructing PCA](4-dim-reduct-pca.ipynb)
 
-===========================
 
-## Below is an unfinished outline. I will expand each of them before each workshop.
-
-===========================
 ## Topic 6: Supervised Learning
   + $x$ -> Known $y$
   + Regression: See [5 - Regression](5-regression.ipynb)
@@ -102,12 +98,45 @@ Go through the code snippets and details in [this blog post](https://medium.com/
   + Advance Supervised Learning Technique: [9 - Bagging and Boosting](9-bagging-boosting.ipynb).
   + Advanced SL concepts: [9 - Bias & Variance](9-bias_var.ipynb) This is VERY IMPORTANT to analyze your ML models!!! You have to revise these concepts Again and Again and Again...... if you do not want to become a "FAKE" ML expert. 
 
-### Topic 6.1: Linear Regression
-* From modeling perspective, Linear regression is doing affine transformation. Go through [the notebook](ml-tuts/linear-affine-transformation.ipynb) to explore linear/affine transformation.
-* From objective perspective, linear regression is doing Maximum Likelihood: Specifically, if you assume that the errors $\varepsilon$ in the regression equation $y=\mathbf{w}^T \mathbf{x}+b+\varepsilon$ are normally distributed with mean 0 and some variance $\sigma^2$, then the goal of linear regression is to find the parameters ( $\mathbf{w}$ and $b$ ) that maximize the likelihood of observing the given data. This is equivalent to minimizing the sum of squared residuals, which is the ordinary least squares (OLS) objective. The connection between OLS and MLE under the assumption of normally distributed errors is a fundamental concept in statistical learning.
-* Additional Reading Materials
-  * [Deep Learning Chapter 5.1.4](https://github.com/janishar/mit-deep-learning-book-pdf/tree/master/complete-book-bookmarked-pdf)
+### Topic 6.1: Data Splitting, Cross Validation 
+* See [the notebook](5-dataset-spliting.ipynb) for a demo and implementations 
+* Understand the underlying statistical assumption: I.I.D 
 
+### Topic 6.2: Linear Regression
+Assuming a linear relationship between x and y
+
+$$y_i = \beta_0 + \beta_1 x_i + \epsilon_i$$
+
+* A linear regression model is doing linear (technically affine) transformation on the features of each example
+$$\hat{y_i} = \hat{\beta_0} + \hat{\beta_1} x_i$$
+  *  Go through [the notebook](ml-tuts/linear-affine-transformation.ipynb) to explore linear/affine transformation.
+  
+* Given labeled examples, how to calculate $\hat{\beta_0}$ and $\hat{\beta_1}$?
+  * MLE: Formulate the objective probabilistically for "judging" which sets of parameters are good. Go through [the blog post](https://medium.com/@sergioli/statistical-estimation-for-machine-learning-ad1d6135ba62) for detail
+
+    <!-- maximize Pr(parameters|data) $\propto$ Pr(data|parameters) * Pr(parameters) -->
+
+  *  MLE for Linear Regression: Specifically, if you assume that the errors $\varepsilon$ in the regression equation $y=\hat{\beta_1}^T \mathbf{x}+\hat{\beta_0}+\varepsilon$ are normally distributed with mean 0 and some variance $\sigma^2$, then the goal of linear regression is to find the parameters ( $\hat{\beta_0}$ and $\hat{\beta_1}$ ) that maximize the likelihood of observing the given data. 
+  *  OLS: This is equivalent to minimizing the sum of squared residuals, which is the ordinary least squares (OLS) objective. The connection between OLS and MLE under the assumption of normally distributed errors is a fundamental concept in statistical learning.
+    $$\sum_{i=1}^n\left(y_i- (\hat{\beta_0} + \hat{\beta_1} x_i)\right)^2$$
+  * How to find the optimal $\hat{\beta_1}$ and $\hat{\beta_1}$?
+    * Hint: Both the function w.r.t. $\hat{\beta_1}$ and the function w.r.t. $\hat{\beta_0}$ are continuous, differentiable, convex 
+    * $$\beta_1=\frac{\sum_{i=1}^n\left(x_i-\bar{x}\right)\left(y_i-\bar{y}\right)}{\sum_{i=1}^n\left(x_i-\bar{x}\right)^2}$$ 
+    * Go through [the notebook](5-regression-lr-ols.ipynb) for the solutions
+* Additional Reading Materials
+  * Reference
+    * [Deep Learning Chapter 5.1.4](https://github.com/janishar/mit-deep-learning-book-pdf/tree/master/complete-book-bookmarked-pdf)
+    * [Derivative Rules](https://www.mathsisfun.com/calculus/derivatives-rules.html)
+    * [Variance Derivation](https://www.kellogg.northwestern.edu/faculty/weber/decs-433/Notes_4_Random_variability.pdf)
+
+### Topic 6.3: Classification
+
+
+===========================
+
+## Below is an unfinished outline. I will expand each of them before each workshop.
+
+===========================
 ## Topic 8: Neural Network
   + Neural Networks, a universal function approximator, are commonly used for supervised learning. 
   + See [10 - Deep Learning](10-deep_learning.ipynb). 
