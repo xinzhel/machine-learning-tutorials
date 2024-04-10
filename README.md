@@ -72,7 +72,7 @@ Go through the code snippets and details in [this blog post](https://medium.com/
     $$p = h_\theta=\frac{1}{1+e^{-\theta^{T} X}} $$
     * Secondly, since they are all chained together, we can update every parameters or, professionally saying, optimize $\theta$ in neural network by utilizing gradient from auto differentiation (This process is also called backward propagation). -->
 
-## Topic 7: Unsupervised Learning for Clustering
+## Topic 7: Unsupervised Learning
 * Pattern recognition
 * No labels, i.e., no concrete tasks
 ### Topic 7.1: Clustering
@@ -90,10 +90,8 @@ Go through the code snippets and details in [this blog post](https://medium.com/
   + See [the notebook for constructing PCA](4-dim-reduct-pca.ipynb)
 
 
-## Topic 6: Supervised Learning
+## Topic 8: Supervised Learning
 * Supervised Learning Models: Linear Regression, Logistic Regression, [Support Vector Machine](7-svm.ipynb), [Decision Tree](8-dt.ipynb) & [K Nearest Neighbours](8-knn.ipynb), Neural Network.
-* Statistical Estimation Framework
-  * Maximum Likelihood Estimation: Formulate the objective probabilistically for "judging" which sets of parameters are good. Go through [the blog post](https://medium.com/@sergioli/statistical-estimation-for-machine-learning-ad1d6135ba62) for detail
 * Optimization Techniques
   * Closed-formed Solutions
   * Gradient Decsent
@@ -104,7 +102,17 @@ Go through the code snippets and details in [this blog post](https://medium.com/
   * See [the notebook](5-dataset-spliting.ipynb) for a demo and implementations 
   * Understand the underlying statistical assumption: I.I.D 
 
-### Topic 6.2: Linear Regression
+### Topic 8.1: Maximum Likelihood Estimation
+* Statistical Estimation: Formulate the objective probabilistically for "judging" which sets of parameters are good, i.e., 
+  $$\max_{\theta} P(\theta \mid x, y)$$
+* What is MLE? 
+  * Traslating the above formula as below according to Bayes Therem
+  $$P(\theta \mid x, y)=\frac{P(y, x \mid \theta) \cdot P(\theta)}{P(x, y)}$$
+  * Simplifying the formula without considering $P(\theta)$, i.e., maximizing the likelihood $P(y, x \mid \theta)$
+  $$\max_{\theta} P(y, x \mid \theta)$$
+* Go through [the blog post](https://medium.com/@sergioli/statistical-estimation-for-machine-learning-ad1d6135ba62) for detail
+
+### Topic 8.2: Linear Regression
 
 Assuming a linear relationship between x and y
 
@@ -122,7 +130,7 @@ $$\hat{y_i} = \hat{\beta_0} + \hat{\beta_1} x_i$$
     $$\sum_{i=1}^n\left(y_i- (\hat{\beta_0} + \hat{\beta_1} x_i)\right)^2$$
   * How to find the optimal $\hat{\beta_1}$ and $\hat{\beta_1}$?
     * Hint: Both the function w.r.t. $\hat{\beta_1}$ and the function w.r.t. $\hat{\beta_0}$ are continuous, differentiable, convex 
-    * $$\beta_1=\frac{\sum_{i=1}^n\left(x_i-\bar{x}\right)\left(y_i-\bar{y}\right)}{\sum_{i=1}^n\left(x_i-\bar{x}\right)^2}$$ 
+  <!-- If a convex function has a minimum, that minimum occurs where its derivative is zero. -->
     * Go through [the notebook](5-regression-lr-ols.ipynb) for the solutions
 * Reference
     * [Deep Learning Chapter 5.1.4](https://github.com/janishar/mit-deep-learning-book-pdf/tree/master/complete-book-bookmarked-pdf)
@@ -136,10 +144,16 @@ $$\hat{y_i} = \hat{\beta_0} + \hat{\beta_1} x_i$$
 ## Below is an unfinished outline. I will expand each of them before each workshop.
 
 ===========================
-### Topic 6.3: Classification
+### Topic 8.3: Logistic Regression for Classification
+
+### Topic 8.3: Support Vector Machine
+
+### Topic 8.4: Decision Tree
+
+### Topic 8.5: K Nearest Neighbours
 
 
-## Topic 8: Neural Network
+## Topic 9: Neural Network
   + Neural Networks, a universal function approximator, are commonly used for supervised learning. 
   + See [10 - Deep Learning](10-deep_learning.ipynb). 
   + Beyond the scope of this couse: it can be applied for Dimension Reduction and Self-supervised Learning. 
