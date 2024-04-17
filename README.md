@@ -122,29 +122,30 @@ $$y_i = \beta_0 + \beta_1 x_i + \epsilon_i$$
 $$\hat{y_i} = \hat{\beta_0} + \hat{\beta_1} x_i$$
   *  Go through [the notebook](ml-tuts/linear-affine-transformation.ipynb) to explore linear/affine transformation.
   
-* Given labeled examples, how to calculate $\hat{\beta_0}$ and $\hat{\beta_1}$?、
+* MLE for Linear Regression ([recoding](https://www.youtube.com/watch?v=6o3TGLABTHc); [Post/Article](https://medium.com/@sergioli/statistical-estimation-for-machine-learning-ad1d6135ba62))
     <!-- maximize Pr(parameters|data) $\propto$ Pr(data|parameters) * Pr(parameters) -->
-
-  *  MLE for Linear Regression: Specifically, if you assume that the errors $\varepsilon$ in the regression equation $y=\hat{\beta_1}^T \mathbf{x}+\hat{\beta_0}+\varepsilon$ are normally distributed with mean 0 and some variance $\sigma^2$, then the goal of linear regression is to find the parameters ( $\hat{\beta_0}$ and $\hat{\beta_1}$ ) that maximize the likelihood of observing the given data. 
-  *  OLS: This is equivalent to minimizing the sum of squared residuals, which is the ordinary least squares (OLS) objective. The connection between OLS and MLE under the assumption of normally distributed errors is a fundamental concept in statistical learning.
+  * Problem: Given labeled examples, how to calculate $\hat{\beta_0}$ and $\hat{\beta_1}$?
+  * MLE Solution: Specifically, if you assume that the errors $\varepsilon$ in the regression equation $y=\hat{\beta_1}^T \mathbf{x}+\hat{\beta_0}+\varepsilon$ are normally distributed with mean 0 and some variance $\sigma^2$, then the goal of linear regression is to find the parameters ( $\hat{\beta_0}$ and $\hat{\beta_1}$ ) that maximize the likelihood of observing the given data. 
+  * OLS: This is equivalent to minimizing the sum of squared residuals, which is the ordinary least squares (OLS) objective. The connection between OLS and MLE under the assumption of normally distributed errors is a fundamental concept in statistical learning.
     $$\sum_{i=1}^n\left(y_i- (\hat{\beta_0} + \hat{\beta_1} x_i)\right)^2$$
   * How to find the optimal $\hat{\beta_1}$ and $\hat{\beta_1}$?
     * Hint: Both the function w.r.t. $\hat{\beta_1}$ and the function w.r.t. $\hat{\beta_0}$ are continuous, differentiable, convex 
   <!-- If a convex function has a minimum, that minimum occurs where its derivative is zero. -->
-    * Go through [the notebook](5-regression-lr-ols.ipynb) for the solutions
+    * Go through [recoding](https://www.youtube.com/watch?v=6o3TGLABTHc) or [Post/Article](https://medium.com/@sergioli/statistical-estimation-for-machine-learning-ad1d6135ba62) for the solutions
 * Reference
     * [Deep Learning Chapter 5.1.4](https://github.com/janishar/mit-deep-learning-book-pdf/tree/master/complete-book-bookmarked-pdf)
     * [Derivative Rules](https://www.mathsisfun.com/calculus/derivatives-rules.html)
     * [Variance Derivation](https://www.kellogg.northwestern.edu/faculty/weber/decs-433/Notes_4_Random_variability.pdf)
 
-
+### Topic 8.3: Logistic Regression for Classification
+* []
 
 ===========================
 
 ## Below is an unfinished outline. I will expand each of them before each workshop.
 
 ===========================
-### Topic 8.3: Logistic Regression for Classification
+
 
 ### Topic 8.3: Support Vector Machine
 
