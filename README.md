@@ -1,13 +1,12 @@
 
 This document serves as a comprehensive course outline, providing an overview of each lecture's main topics, with direct links to specific codes, reading materials, and other resources for in-depth study. 
 
-## Topic 1: Machine Learning Paradigms 
-Go through [my blog post](https://medium.com/@sergioli/from-simple-to-complex-a-complete-overview-of-reinforcement-learning-599a8c1ea689) for details
+## Topic 1: Machine Learning Paradigms ([Recording](https://www.youtube.com/watch?v=acqzti1U3bo&list=PLJNMCL_eahmQ70zZECr2cTDLwrXJ-RpgW&index=1); [Article/Post](https://medium.com/@sergioli/from-simple-to-complex-a-complete-overview-of-reinforcement-learning-599a8c1ea689))
 <!-- Does self-supervised learning belong to unsupervised learning? What do you consider "unknown" in the context of unsupervised learning? 
 time series forecasting is one kind of SSL, e.g., forcasting the volume of the Transaction  -->
 
 
-## (Optional) Topic 2: Python Setup
+## Topic 2: Python Setup
 If you use Anaconda, you do not need to do the following things. Common ML and data science packages are all setup.
 ### 2.1: Set up a Python Virtual Environment Using Conda
 * Install conda: Find the bash command for your OS on [the web page](https://docs.anaconda.com/free/miniconda/#quick-command-line-install)
@@ -24,16 +23,15 @@ If you use Anaconda, you do not need to do the following things. Common ML and d
 
 > Alternatively, you can use Pyenv.  But it requires more steps for configuration and managing Python versions, especially on Windows.  See [my blog post](https://gist.github.com/xinzhel/dd586583a0ff1d81b24e56f9680a4eb8) for details.
 
-### 2.2: Install Python Package for The Environment Using pip
-All the required packages are listed in `requirements.txt`.
-
+### 2.2: Install Python Package 
+* All the required packages are listed in `requirements.txt`.
+* Using the `pip` package for installing other packages
 ```python
 pip install -r requirements.txt
 ```
 
-## Topic 3: Use of Python
+## Topic 3: Use of Python ([Recoding](https://www.youtube.com/watch?v=woXs5xBjF5M&list=PLJNMCL_eahmQ70zZECr2cTDLwrXJ-RpgW&index=2); [Article](https://medium.com/@sergioli/python-scripts-modules-andpackages-232d5f749e64))
 ### What are Python Script, Modules and Packages? How to Use Them?
-Go through [my blog post](https://medium.com/@sergioli/python-scripts-modules-andpackages-232d5f749e64)
 
 ### Python Data Types, Functions, Classes
 Go through the notebook: [1-basic-python.ipynb](1-basic-python.ipynb)
@@ -44,7 +42,7 @@ Go through the notebook: [1-basic-python.ipynb](1-basic-python.ipynb)
   * Statistics underlies mulitple purposes of ML. Essentially, statistical estimation is used for defining objectives for learning. (Details are in [the blog post](https://medium.com/@sergioli/statistical-estimation-for-machine-learning-ad1d6135ba62))
   * For some optimization algorithms, e.g., logistic regression and neural networks, Calculus is used to calculate derivatives w.r.t. the parameters of functions. Calculus is barely discussed and required for this course.
 
-## Topic 5: Utilizing Sample Statistics in Data Preprocessing and Wrangling
+## Topic 5: Using Sample Statistics in Data Preprocessing and Wrangling ([Article/Post](https://medium.com/@sergioli/data-wrangling-and-preprocessing-in-python-a-practical-guide-345aa2e55439))
 Before this topic, let's review the question: **What is the use of statistics in ML?**
 
 Consider a dataset intended for a rating system, which spans a range from 1 to 10 but includes an outlier (100) and a missing value (NA): [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 100, NA]. Addressing the peculiarities of this dataset involves several critical steps:
@@ -54,7 +52,7 @@ Consider a dataset intended for a rating system, which spans a range from 1 to 1
   *  **How is the Interquartile Range useful for outlier detection?** You may want to look at the from-scratch implementation of `calculate_quartiles` in [the python module](my_ml_package/stat.py) for insight.
 
 For preprocessing multivariate data in preparation for some ML algorithms, especially algorithms based on geometric, it's crucial to:
-* Normalize the data, utilizing techniques such as Min-Max Scaling: For details, see the last section of [this blog post](https://medium.com/@sergioli/data-wrangling-and-preprocessing-in-python-a-practical-guide-345aa2e55439).
+* Normalize the data, utilizing techniques such as Min-Max Scaling.
   
 Go through the code snippets and details in [this blog post](https://medium.com/@sergioli/data-wrangling-and-preprocessing-in-python-a-practical-guide-345aa2e55439).
 
@@ -80,15 +78,13 @@ Go through the code snippets and details in [this blog post](https://medium.com/
   + [DB-SCAN, Hierarchical Clustering](3-clustering-others.ipynb); 
   + [Evaluation](3-clustering-eval.ipynb)
 
-### Topic 7.2: Dimension Reduction
+### Topic 7.2: Dimensionality Reduction via PCA ([Article/Post](https://medium.com/@sergioli/principal-component-analysis-an-intuitive-mathematically-comprehensive-and-step-by-step-coding-e40f8a7f6417))
 * When do we want to perform dimensionality reduction?
     <!-- + preserve semantics of high-dimensional data in low-dimensional subspace
     + overcome the curse of dimensionality: "When the dimensionality increases, the volume of the space increases so fast that the available data become sparse" -->
 * Idea 1: Focus on directions that maximize the variance of data
 <!-- * Idea 2: Removing correlation, i.e., a linear relationship between variables? (Redundant information) -->
-  + Go through [the post](https://medium.com/@sergioli/principal-component-analysis-an-intuitive-mathematically-comprehensive-and-step-by-step-coding-e40f8a7f6417)
   + See [the notebook for constructing PCA](4-dim-reduct-pca.ipynb)
-
 
 ## Topic 8: Supervised Learning
 * Supervised Learning Models: Linear Regression, Logistic Regression, [Support Vector Machine](7-svm.ipynb), [Decision Tree](8-dt.ipynb) & [K Nearest Neighbours](8-knn.ipynb), Neural Network.
@@ -102,18 +98,17 @@ Go through the code snippets and details in [this blog post](https://medium.com/
   * See [the notebook](5-dataset-spliting.ipynb) for a demo and implementations 
   * Understand the underlying statistical assumption: I.I.D 
 
-### Topic 8.1: Maximum Likelihood Estimation
+### Topic 8.1: Maximum Likelihood Estimation ([Recoding](https://www.youtube.com/watch?v=z8JgJWvYa6Y); [Post/Article](https://medium.com/@sergioli/statistical-estimation-for-machine-learning-ad1d6135ba62))
 * Statistical Estimation: Formulate the objective probabilistically for "judging" which sets of parameters are good, i.e., 
   $$\max_{\theta} P(\theta \mid x, y)$$
-* What is MLE? 
+* What is MLE?
   * Traslating the above formula as below according to Bayes Therem
   $$P(\theta \mid x, y)=\frac{P(y, x \mid \theta) \cdot P(\theta)}{P(x, y)}$$
   * Simplifying the formula without considering $P(\theta)$, i.e., maximizing the likelihood $P(y, x \mid \theta)$
   $$\max_{\theta} P(y, x \mid \theta)$$
 * Go through [the blog post](https://medium.com/@sergioli/statistical-estimation-for-machine-learning-ad1d6135ba62) for detail
 
-### Topic 8.2: Linear Regression
-
+### Topic 8.2: Linear Regression ([Recoding](https://www.youtube.com/watch?v=6o3TGLABTHc); [Post/Article](https://medium.com/@sergioli/statistical-estimation-for-machine-learning-ad1d6135ba62))
 Assuming a linear relationship between x and y
 
 $$y_i = \beta_0 + \beta_1 x_i + \epsilon_i$$
@@ -122,7 +117,7 @@ $$y_i = \beta_0 + \beta_1 x_i + \epsilon_i$$
 $$\hat{y_i} = \hat{\beta_0} + \hat{\beta_1} x_i$$
   *  Go through [the notebook](ml-tuts/linear-affine-transformation.ipynb) to explore linear/affine transformation.
   
-* MLE for Linear Regression ([recoding](https://www.youtube.com/watch?v=6o3TGLABTHc); [Post/Article](https://medium.com/@sergioli/statistical-estimation-for-machine-learning-ad1d6135ba62))
+* MLE for Linear Regression 
     <!-- maximize Pr(parameters|data) $\propto$ Pr(data|parameters) * Pr(parameters) -->
   * Problem: Given labeled examples, how to calculate $\hat{\beta_0}$ and $\hat{\beta_1}$?
   * MLE Solution: Specifically, if you assume that the errors $\varepsilon$ in the regression equation $y=\hat{\beta_1}^T \mathbf{x}+\hat{\beta_0}+\varepsilon$ are normally distributed with mean 0 and some variance $\sigma^2$, then the goal of linear regression is to find the parameters ( $\hat{\beta_0}$ and $\hat{\beta_1}$ ) that maximize the likelihood of observing the given data. 
@@ -131,14 +126,17 @@ $$\hat{y_i} = \hat{\beta_0} + \hat{\beta_1} x_i$$
   * How to find the optimal $\hat{\beta_1}$ and $\hat{\beta_1}$?
     * Hint: Both the function w.r.t. $\hat{\beta_1}$ and the function w.r.t. $\hat{\beta_0}$ are continuous, differentiable, convex 
   <!-- If a convex function has a minimum, that minimum occurs where its derivative is zero. -->
-    * Go through [recoding](https://www.youtube.com/watch?v=6o3TGLABTHc) or [Post/Article](https://medium.com/@sergioli/statistical-estimation-for-machine-learning-ad1d6135ba62) for the solutions
+    * Go through [recoding](https://www.youtube.com/watch?v=6o3TGLABTHc)
 * Reference
     * [Deep Learning Chapter 5.1.4](https://github.com/janishar/mit-deep-learning-book-pdf/tree/master/complete-book-bookmarked-pdf)
     * [Derivative Rules](https://www.mathsisfun.com/calculus/derivatives-rules.html)
     * [Variance Derivation](https://www.kellogg.northwestern.edu/faculty/weber/decs-433/Notes_4_Random_variability.pdf)
 
-### Topic 8.3: Logistic Regression for Classification
-* []
+### Topic 8.3: Logistic Regression for Classification (Recoding; Post/Article)
+* Implementation of Logistic Regression: See [the Python module](my_ml_package/classification.py)
+* Testing Logistic Regression: See [the notebook](6-classification-logistic-reg.ipynb)
+* Evaluation Metrics: See [the notebook](6-classification-eval.ipynb)
+
 
 ===========================
 
