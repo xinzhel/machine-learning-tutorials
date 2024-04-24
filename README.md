@@ -132,24 +132,25 @@ $$\hat{y_i} = \hat{\beta_0} + \hat{\beta_1} x_i$$
     * [Derivative Rules](https://www.mathsisfun.com/calculus/derivatives-rules.html)
     * [Variance Derivation](https://www.kellogg.northwestern.edu/faculty/weber/decs-433/Notes_4_Random_variability.pdf)
 
-### Topic 8.3: Logistic Regression for Classification (Recoding; Post/Article)
+### Topic 8.3: Logistic Regression for Classification ([Recoding](https://www.youtube.com/watch?v=trFqQP9hyJU); [Post/Article](https://medium.com/@sergioli/from-theory-to-code-maximum-likelihood-estimation-for-classification-tasks-6ecd8d075eed))
 * Implementation of Logistic Regression: See [the Python module](my_ml_package/classification.py)
 * Testing Logistic Regression: See [the notebook](6-classification-logistic-reg.ipynb)
 * Evaluation Metrics: See [the notebook](6-classification-eval.ipynb)
 
+### Topic 8.4: Support Vector Machine (Recoding will be released soon.)
 
-===========================
-
-## Below is an unfinished outline. I will expand each of them before each workshop.
-
-===========================
+=========================== 
+### Below is an unfinished outline. I will expand each of them before each workshop.
 
 
-### Topic 8.3: Support Vector Machine
 
-### Topic 8.4: Decision Tree
+### Topic 8.5: Decision Tree
 
-### Topic 8.5: K Nearest Neighbours
+### Topic 8.6: K Nearest Neighbours
+
+
+## Topic 10: Bias and Variance & Regularization
+
 
 
 ## Topic 9: Neural Network
@@ -157,3 +158,6 @@ $$\hat{y_i} = \hat{\beta_0} + \hat{\beta_1} x_i$$
   + See [10 - Deep Learning](10-deep_learning.ipynb). 
   + Beyond the scope of this couse: it can be applied for Dimension Reduction and Self-supervised Learning. 
   + Examples exist in language intelligence: [Word2vec](https://arxiv.org/abs/1301.3781), Auto-Regressive Language Models (AR-LMs) and Auto-Encoding Language Models (AE-LMs). Although they utilize techniques reminiscent of supervised learning, this classification arises because the supervisory signals are derived internally from the data itself, rather than relying on external labels. 
+
+
+=============================
