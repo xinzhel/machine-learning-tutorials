@@ -12,7 +12,7 @@ def sigmoid(z):
     """
     return 1 / (1 + np.exp(-z))
 
-def logistic_regression_for_binary(X, y, lr=0.01, num_iter=1000, reg_lambda=0, reg_type=None):
+def logistic_regression_for_binary(X, y,  W=None, b=None, lr=0.01, num_iter=1000, reg_lambda=0, reg_type=None):
     """
     Perform logistic regression on the dataset (X, y) using gradient descent.
 
@@ -27,8 +27,13 @@ def logistic_regression_for_binary(X, y, lr=0.01, num_iter=1000, reg_lambda=0, r
     - b: float, the bias of the logistic regression model.
     """
     n_samples, n_features = X.shape
-    beta1 = np.zeros(n_features)
-    beta0 = 0
+    if W is None:
+        assert b is None, "If W is not provided, b should not be provided as well."
+        beta1 = np.zeros(n_features)
+        beta0 = 0
+    else:
+        beta1 = W
+        beta0 = b
 
     for _ in range(num_iter):
         # Compute the predicted values
@@ -50,7 +55,7 @@ def logistic_regression_for_binary(X, y, lr=0.01, num_iter=1000, reg_lambda=0, r
 
     return beta1, beta0
 
-def logistic_regression_for_multiclass(X, y, lr=0.01, num_iter=1000, reg_lambda=0, reg_type=None):
+def logistic_regression_for_multiclass(X, y, W=None, b=None, lr=0.01, num_iter=1000, reg_lambda=0, reg_type=None):
     """
     Perform logistic regression for multiclass classification using one-vs-all strategy.
 
@@ -66,8 +71,10 @@ def logistic_regression_for_multiclass(X, y, lr=0.01, num_iter=1000, reg_lambda=
     """
     n_samples, n_features = X.shape
     n_classes = len(np.unique(y))
-    W = np.zeros((n_features, n_classes))
-    b = np.zeros(n_classes)
+    if W is None:
+        assert b is None, "If W is not provided, b should not be provided as well."
+        W = np.zeros((n_features, n_classes))
+        b = np.zeros(n_classes)
 
     for i in range(n_classes):
         assert i in y, f"Class {i} is not present in the target values."
@@ -75,7 +82,7 @@ def logistic_regression_for_multiclass(X, y, lr=0.01, num_iter=1000, reg_lambda=
         binary_y = np.where(y == i, 1, 0)
 
         # Perform binary logistic regression
-        W[:, i], b[i] = logistic_regression_for_binary(X, binary_y, lr, num_iter, reg_lambda, reg_type)
+        W[:, i], b[i] = logistic_regression_for_binary(X, binary_y,  W[:, i], b[i], lr, num_iter, reg_lambda, reg_type)
 
     return W, b
 
