@@ -139,25 +139,16 @@ $$\hat{y_i} = \hat{\beta_0} + \hat{\beta_1} x_i$$
 
 ### Topic 8.4: Support Vector Machine (Recoding will be released soon.)
 
-=========================== 
-### Below is an unfinished outline. I will expand each of them before each workshop.
+### Topic 8.5: Decision Tree (Recoding will be released soon.)
 
+## Topic 9: Bias and Variance (Recoding will be released soon.)
+* Bias and Variance are the underlying causes of Underfitting and Overfitting: See [the notebook](9-bias_var.ipynb) for details.
+* Ensemble Models Reduce Variance: See [the notebook](9-regularization-decision-tree.ipynb) for details.
 
-
-### Topic 8.5: Decision Tree
-
-### Topic 8.6: K Nearest Neighbours
-
-
-## Topic 10: Bias and Variance & Regularization
-
-
-
-## Topic 9: Neural Network
-  + Neural Networks, a universal function approximator, are commonly used for supervised learning. 
-  + See [10 - Deep Learning](10-deep_learning.ipynb). 
-  + Beyond the scope of this couse: it can be applied for Dimension Reduction and Self-supervised Learning. 
-  + Examples exist in language intelligence: [Word2vec](https://arxiv.org/abs/1301.3781), Auto-Regressive Language Models (AR-LMs) and Auto-Encoding Language Models (AE-LMs). Although they utilize techniques reminiscent of supervised learning, this classification arises because the supervisory signals are derived internally from the data itself, rather than relying on external labels. 
-
-
-=============================
+## Topic 9: Neural Network (Recoding will be released soon.)
+* A simple Neural Network is just to transform data with $N$ linear functions nested with non-linear functions (e.g., sigmoid), do such transformation **again** with a different $N$, do such transformation **again** with a different $N$, ... : 
+  * See [10 - Deep Learning](10-neural-network.ipynb). 
+  <!-- * $N$ is called the number of neurons.
+  * The number of "agains" is the number of layers. -->
+  <!-- + Beyond the scope of this couse: it can be applied for Dimension Reduction and Self-supervised Learning.  -->
+  <!-- + Examples exist in language intelligence: [Word2vec](https://arxiv.org/abs/1301.3781), Auto-Regressive Language Models (AR-LMs) and Auto-Encoding Language Models (AE-LMs). Although they utilize techniques reminiscent of supervised learning, this classification arises because the supervisory signals are derived internally from the data itself, rather than relying on external labels.  -->

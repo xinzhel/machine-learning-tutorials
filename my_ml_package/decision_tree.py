@@ -44,7 +44,7 @@ def information_gain(y_parent, left_child, right_child, method='entropy'):
     return gain
 
 
-def feature_importance(X, y, feature):
+def feature_importance(X, y, feature, method='entropy'):
     possible_thresholds = np.unique(X[:, feature])
     best_gain = 0
     best_threshold = None
@@ -53,7 +53,7 @@ def feature_importance(X, y, feature):
         right = y[X[:, feature] > threshold]
         if len(left) == 0 or len(right) == 0:
             continue
-        gain = information_gain(y, left, right)
+        gain = information_gain(y, left, right, method=method)
         if gain > best_gain:
 
             best_gain = gain

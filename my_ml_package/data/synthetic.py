@@ -20,7 +20,7 @@ def generate_correlated_X(num_features = 5, corr=0.95, sample_size = 1000):
     X = np.random.multivariate_normal(mean=np.zeros(num_features), cov=corr_matrix, size=sample_size)
     return X
 
-def variance_sample_for_decision_tree(sample_size = 30, num_features=5, corr=0.95):
+def variance_sample_for_decision_tree(sample_size = 30, num_features=5, corr=0.95, base_feature=0, prob=0.2):
     """ Sample easily separable by a decision tree, but with high variance. """
 
     X = generate_correlated_X(num_features = num_features, corr=corr, sample_size=sample_size)
@@ -30,8 +30,8 @@ def variance_sample_for_decision_tree(sample_size = 30, num_features=5, corr=0.9
     # what is the lowest possible error rate?
     y = np.zeros(sample_size)
     for i in range(sample_size):
-        if X[i,0] <= 0.5: # {0: 80%, 1: 20%}
-            y[i] = np.random.binomial(1, 0.2)
+        if X[i,base_feature] <= 0.5: # {0: 80%, 1: 20%}
+            y[i] = np.random.binomial(1, prob)
         else:             # {0: 20%, 1: 80%}
-            y[i] = np.random.binomial(1, 0.8)
+            y[i] = np.random.binomial(1, 1-prob)
     return X, y.astype(int)
