@@ -73,8 +73,8 @@ Go through the code snippets and details in [this blog post](https://medium.com/
 ## Topic 7: Unsupervised Learning
 * Pattern recognition
 * No labels, i.e., no concrete tasks
-### Topic 7.1: Clustering
-  + [K-means](3-clustering-kmeans.ipynb)
+### Topic 7.1: Clustering 
+  + [K-means](3-clustering-kmeans.ipynb) ([Video](https://www.youtube.com/watch?v=Sz6rscxUIzU&list=PLJNMCL_eahmQ70zZECr2cTDLwrXJ-RpgW))
   + [DB-SCAN, Hierarchical Clustering](3-clustering-others.ipynb); 
   + [Evaluation](3-clustering-eval.ipynb)
 
@@ -145,7 +145,9 @@ $$\hat{y_i} = \hat{\beta_0} + \hat{\beta_1} x_i$$
 * Bias and Variance are the underlying causes of Underfitting and Overfitting: See [the notebook](9-bias_var.ipynb) for details.
 * Ensemble Models Reduce Variance: See [the notebook](9-regularization-decision-tree.ipynb) for details.
 
-## Topic 9: Neural Network (Recoding will be released soon.)
+## Topic 9: Neural Network
+* Math of Neural Network ([Video](https://www.youtube.com/watch?v=-2sV2GWr1fk))
+* Implementing Neural Network from Scratch in minimal Python Code (NO THIRD-PARTY LIBRARY) ([Video](https://www.youtube.com/watch?v=TZfBukQO-A0&list=PLJNMCL_eahmQ70zZECr2cTDLwrXJ-RpgW&index=9))
 * A simple Neural Network is just to transform data with $N$ linear functions nested with non-linear functions (e.g., sigmoid), do such transformation **again** with a different $N$, do such transformation **again** with a different $N$, ... : 
   * See [10 - Deep Learning](10-neural-network.ipynb). 
   <!-- * $N$ is called the number of neurons.
