@@ -1,61 +1,33 @@
 
 This document serves as a comprehensive course outline, providing an overview of each lecture's main topics, with direct links to specific codes, reading materials, and other resources for in-depth study. 
 
-## Topic 1: Machine Learning Paradigms ([Recording](https://www.youtube.com/watch?v=acqzti1U3bo&list=PLJNMCL_eahmQ70zZECr2cTDLwrXJ-RpgW&index=1); [Article/Post](https://medium.com/@sergioli/from-simple-to-complex-a-complete-overview-of-reinforcement-learning-599a8c1ea689))
+## Topic 1: Machine Learning Paradigms ([Video](https://www.youtube.com/watch?v=acqzti1U3bo&list=PLJNMCL_eahmQ70zZECr2cTDLwrXJ-RpgW&index=1))
+* Supervised Learning, Unsupervised Learning, and Reinforcement Learning ([Section 1 of The Article](https://medium.com/@sergioli/from-simple-to-complex-a-complete-overview-of-reinforcement-learning-599a8c1ea689))
 <!-- Does self-supervised learning belong to unsupervised learning? What do you consider "unknown" in the context of unsupervised learning? 
 time series forecasting is one kind of SSL, e.g., forcasting the volume of the Transaction  -->
+* How Does Deep Learning Differ from Above Paradigms?
 
+## Topic 2: Python 
+* [Python Installations](001-python-install.md) 
+* Features as Programming Language ; Python Data Types, Functions, Classes [001-basic-python.ipynb](001-basic-python.ipynb)
+* Python Script, Modules and Packages ([Video](https://www.youtube.com/watch?v=woXs5xBjF5M&list=PLJNMCL_eahmQ70zZECr2cTDLwrXJ-RpgW&index=2) or [Article](https://medium.com/@sergioli/python-scripts-modules-andpackages-232d5f749e64))
 
-## Topic 2: Python Setup
-If you use Anaconda, you do not need to do the following things. Common ML and data science packages are all setup.
-### 2.1: Set up a Python Virtual Environment Using Conda
-* Install conda: Find the bash command for your OS on [the web page](https://docs.anaconda.com/free/miniconda/#quick-command-line-install)
+## Topic 3: Mathematical Disciplines
+Three mathematical disciplines required for Machine Learning and Deep Learning:  Linear Algebra, Statistics and Calculas
+
+* Linear Algebra
+  * provides functions mapping independent variable(s) $x$ -> dependent variable(s) $y$
+  * Python Packages: [NumPy](001-numpy-linear-algebra.ipynb)
+
+* Calculas
+  * [Auto Differentiation](012-auto-diff.ipynb)
+  * Optimization: calculate derivatives w.r.t. the parameters of functions
   
-* Setup a virtual environment (Ensure that the Python version is large than Python3.3 to avoid the import error)
-    ```
-    conda create -n learn_ml python=3.7.9
-    conda activate learn_ml
-    ```
-* Remove the environment if you do not use it to save your disk
-    ```
-    conda remove -n learn_ml --all
-    ```
-
-> Alternatively, you can use Pyenv.  But it requires more steps for configuration and managing Python versions, especially on Windows.  See [my blog post](https://gist.github.com/xinzhel/dd586583a0ff1d81b24e56f9680a4eb8) for details.
-
-### 2.2: Install Python Package 
-* All the required packages are listed in `requirements.txt`.
-* Using the `pip` package for installing other packages
-```python
-pip install -r requirements.txt
-```
-
-## Topic 3: Use of Python ([Recoding](https://www.youtube.com/watch?v=woXs5xBjF5M&list=PLJNMCL_eahmQ70zZECr2cTDLwrXJ-RpgW&index=2); [Article](https://medium.com/@sergioli/python-scripts-modules-andpackages-232d5f749e64))
-### What are Python Script, Modules and Packages? How to Use Them?
-
-### Python Data Types, Functions, Classes
-Go through the notebook: [1-basic-python.ipynb](1-basic-python.ipynb)
-
-## Topic 4: Basic Mathematical Disciplines
-* The mathematical disciplines required for Machine Learning: Basic Linear Algebra introduced in [1-basic-linear-algebra](1-basic-linear-algebra.ipynb); Basic Statistics introduced in [2-stat](2-basic-stat.ipynb); Calculus for optimizing differentiable functions exemplified by [basic-differentiable-func](ml-tuts/basic-differentiable-func.ipynb).
-  * Linear algebra provides functions mapping independent variable(s) $x$ -> dependent variable(s) $y$
-  * Statistics underlies mulitple purposes of ML. Essentially, statistical estimation is used for defining objectives for learning. (Details are in [the blog post](https://medium.com/@sergioli/statistical-estimation-for-machine-learning-ad1d6135ba62))
-  * For some optimization algorithms, e.g., logistic regression and neural networks, Calculus is used to calculate derivatives w.r.t. the parameters of functions. Calculus is barely discussed and required for this course.
-
-## Topic 5: Using Sample Statistics in Data Preprocessing and Wrangling ([Article/Post](https://medium.com/@sergioli/data-wrangling-and-preprocessing-in-python-a-practical-guide-345aa2e55439))
-Before this topic, let's review the question: **What is the use of statistics in ML?**
-
-Consider a dataset intended for a rating system, which spans a range from 1 to 10 but includes an outlier (100) and a missing value (NA): [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 100, NA]. Addressing the peculiarities of this dataset involves several critical steps:
-* Understanding the Dataset Through Sample Statistics (noting the small size of this example compared to typically larger datasets)
-* Handling Missing or Incomplete Values
-* Identifying and Removing Outliers:
-  *  **How is the Interquartile Range useful for outlier detection?** You may want to look at the from-scratch implementation of `calculate_quartiles` in [the python module](my_ml_package/stat.py) for insight.
-
-For preprocessing multivariate data in preparation for some ML algorithms, especially algorithms based on geometric, it's crucial to:
-* Normalize the data, utilizing techniques such as Min-Max Scaling.
-  
-Go through the code snippets and details in [this blog post](https://medium.com/@sergioli/data-wrangling-and-preprocessing-in-python-a-practical-guide-345aa2e55439).
-
+* Statistics
+  * [Variables, Probability and Distribution](002-basic-stat.ipynb)
+  * Use Case in Deep Learning: Statistical Estimation for defining objectives for learning. (Details are in [the blog post](https://medium.com/@sergioli/statistical-estimation-for-machine-learning-ad1d6135ba62))
+  * Use Case in Data Preprocessing and Wrangling: Sample Statistics ([Article/Post](https://medium.com/@sergioli/data-wrangling-and-preprocessing-in-python-a-practical-guide-345aa2e55439))
+    * Go through the code snippets and details in [Section 2 of the notebook](002-basic-stat.ipynb) or [this blog post](https://medium.com/@sergioli/data-wrangling-and-preprocessing-in-python-a-practical-guide-345aa2e55439).
 
 ## Topic 6: Statistical Concepts for Modeling
 **What are other use cases of statistics in ML?** statistical inference plays an essential in machine learning, including statistical estimation of parametric models, machine learning inference/predictions. 
