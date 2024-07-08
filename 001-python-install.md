@@ -9,7 +9,7 @@ Is your laptop equiped with NVIDIA GPUs or Apple Metal chips?
     > For Windows users, it is likely that many issues happen during installation. Unless you have a very powerful GPU, better directly use Google Colab
 * For old Mac with Nvidia GPUs, just install CUDA
 
-## 2. (For those using local PCs or Mac) Set up a Python Virtual Environment Using Conda
+## 2. Set up a Python Virtual Environment Using Conda
 * Install conda: Find the bash command for your OS on [the web page](https://docs.anaconda.com/free/miniconda/#quick-command-line-install)
   
 * Setup a virtual environment (Ensure that the Python version is large than Python3.3 to avoid the import error)
@@ -24,7 +24,7 @@ Is your laptop equiped with NVIDIA GPUs or Apple Metal chips?
 <!-- Alternatively, you can use Pyenv.  But it requires more steps for configuration and managing Python versions, especially on Windows.   See [my blog post](https://gist.github.com/xinzhel/dd586583a0ff1d81b24e56f9680a4eb8) for details. -->
 
 
-## 3: Install Some Common Python Package for Data Analysis and Machine Learning
+## 3. Install Some Common Python Package for Data Analysis and Machine Learning
 * Run the commands below in your terminal
     ```
     pip install numpy
@@ -47,7 +47,7 @@ Is your laptop equiped with NVIDIA GPUs or Apple Metal chips?
     ```
 <!-- If you use Anaconda, you may not need to do the thing 2.1, 2.2 above. Common ML and data science packages are all setup. -->
 
-## 4: Install Python Package for Deep Learning Framework 
+## 4. Install Python Package for Deep Learning 
 ##Tensorflow##
 * For Mac with Apple Metal chips
     ```
