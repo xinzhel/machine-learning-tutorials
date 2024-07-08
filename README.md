@@ -32,7 +32,7 @@ Three mathematical disciplines required for Machine Learning and Deep Learning: 
 ## Topic 6: Statistical Concepts for Modeling
 **What are other use cases of statistics in ML?** statistical inference plays an essential in machine learning, including statistical estimation of parametric models, machine learning inference/predictions. 
 * You probably feel confused of these concepts. Go through the blog post for A BIG PICTURE: [Statistical Inference v.s. Statistical Estimation v.s. Machine Learning Inference](https://medium.com/@sergioli/statistical-inference-v-s-statistical-estimation-v-s-ml-inference-03f79404645a).
-* Go through the very basic statistical concepts (sample, probability distribution, PDF, PMF, and so on) in [the notebook: 2-stat](2-basic-stat.ipynb). This is important to understand the questions:
+* Go through the very basic statistical concepts (sample, probability distribution, PDF, PMF, and so on) in [the notebook: 2-stat](002-basic-stat.ipynb). This is important to understand the questions:
   *  How to infer sampling distributions? From direct estimation of probabilities via averaging to estimation of indirect parameters (e.g., $\lambda$ for Poisson Distribution) to estimation of parameters of conditional probability distribution.
   *  Assessing the properties of data distributions to match suitable ML algorithms
 *  **Why is Central Limit Theorem useful for machine learning?**
@@ -46,28 +46,27 @@ Three mathematical disciplines required for Machine Learning and Deep Learning: 
 * Pattern recognition
 * No labels, i.e., no concrete tasks
 ### Topic 7.1: Clustering 
-  + [K-means](3-clustering-kmeans.ipynb) ([Video](https://www.youtube.com/watch?v=Sz6rscxUIzU&list=PLJNMCL_eahmQ70zZECr2cTDLwrXJ-RpgW))
-  + [DB-SCAN, Hierarchical Clustering](3-clustering-others.ipynb); 
-  + [Evaluation](3-clustering-eval.ipynb)
+  + [K-means](003-clustering-kmeans.ipynb) ([Video](https://www.youtube.com/watch?v=Sz6rscxUIzU&list=PLJNMCL_eahmQ70zZECr2cTDLwrXJ-RpgW))
+  + [DB-SCAN, Hierarchical Clustering](003-clustering-others.ipynb); 
+  + [Evaluation](003-clustering-eval.ipynb)
 
-### Topic 7.2: Dimensionality Reduction via PCA ([Article/Post](https://medium.com/@sergioli/principal-component-analysis-an-intuitive-mathematically-comprehensive-and-step-by-step-coding-e40f8a7f6417))
+### Topic 7.2: Dimensionality Reduction
 * When do we want to perform dimensionality reduction?
+  + [Video for General Discussion](https://www.youtube.com/watch?v=Q5Fvelbnl8Q)
     <!-- + preserve semantics of high-dimensional data in low-dimensional subspace
     + overcome the curse of dimensionality: "When the dimensionality increases, the volume of the space increases so fast that the available data become sparse" -->
-* Idea 1: Focus on directions that maximize the variance of data
+* Idea 1: Focus on directions that maximize the variance of data -> PCA ([Notebook](004-dim-reduct-pca.ipynb); [Video](https://www.youtube.com/watch?v=q8bCGXFqqcc))
 <!-- * Idea 2: Removing correlation, i.e., a linear relationship between variables? (Redundant information) -->
-  + See [the notebook for constructing PCA](4-dim-reduct-pca.ipynb)
 
 ## Topic 8: Supervised Learning
-* Supervised Learning Models: Linear Regression, Logistic Regression, [Support Vector Machine](7-svm.ipynb), [Decision Tree](8-dt.ipynb) & [K Nearest Neighbours](8-knn.ipynb), Neural Network.
+* Supervised Learning Models: Linear Regression, Logistic Regression, Support Vector Machine ([Notebook](007-svm.ipynb)), Decision Tree ([Notebook](008-dt.ipynb)) & K Nearest Neighbours ([Notebook](008-knn.ipynb)), Neural Network.
 * Optimization Techniques
   * Closed-formed Solutions
   * Gradient Decsent
-* Advance Supervised Learning Technique: [9 - Bagging and Boosting](9-bagging-boosting.ipynb).
-* Advanced learning concepts: [9 - Bias & Variance](9-bias_var.ipynb) This is VERY IMPORTANT to analyze your ML models!!! You have to revise these concepts Again and Again and Again...... if you do not want to become a "FAKE" ML expert. 
+* Advance Supervised Learning Technique: 9 - Bagging and Boosting ([Notebook](009-regularization-decision-tree.ipynb)).
+* Advanced learning concepts: Bias & Variance ([Notebook](009-bias-var.ipynb)) This is VERY IMPORTANT to analyze your ML models!!! You have to revise these concepts Again and Again and Again...... if you do not want to become a "FAKE" ML expert. 
 
-* Data Splitting, Cross Validation 
-  * See [the notebook](5-dataset-spliting.ipynb) for a demo and implementations 
+* Data Splitting ([Notebook](005-dataset-spliting.ipynb)), Cross Validation 
   * Understand the underlying statistical assumption: I.I.D 
 
 ### Topic 8.1: Maximum Likelihood Estimation ([Recoding](https://www.youtube.com/watch?v=z8JgJWvYa6Y); [Post/Article](https://medium.com/@sergioli/statistical-estimation-for-machine-learning-ad1d6135ba62))
@@ -106,22 +105,21 @@ $$\hat{y_i} = \hat{\beta_0} + \hat{\beta_1} x_i$$
 
 ### Topic 8.3: Logistic Regression for Classification ([Recoding](https://www.youtube.com/watch?v=trFqQP9hyJU); [Post/Article](https://medium.com/@sergioli/from-theory-to-code-maximum-likelihood-estimation-for-classification-tasks-6ecd8d075eed))
 * Implementation of Logistic Regression: See [the Python module](my_ml_package/classification.py)
-* Testing Logistic Regression: See [the notebook](6-classification-logistic-reg.ipynb)
-* Evaluation Metrics: See [the notebook](6-classification-eval.ipynb)
+* Testing Logistic Regression ([Notebook](006-classification-logistic-reg.ipynb))
+* Evaluation Metrics ([Notebook](006-classification-eval.ipynb))
 
 ### Topic 8.4: Support Vector Machine (Recoding will be released soon.)
 
 ### Topic 8.5: Decision Tree (Recoding will be released soon.)
 
 ## Topic 9: Bias and Variance (Recoding will be released soon.)
-* Bias and Variance are the underlying causes of Underfitting and Overfitting: See [the notebook](9-bias_var.ipynb) for details.
-* Ensemble Models Reduce Variance: See [the notebook](9-regularization-decision-tree.ipynb) for details.
+* Bias and Variance are the underlying causes of Underfitting and Overfitting ([Notebook](009-bias-var.ipynb))
+* Ensemble Models Reduce Variance ([Notebook](009-regularization-decision-tree.ipynb))
 
-## Topic 9: Neural Network
+## Topic 9: Neural Network ([Notebook](010-neural-network.ipynb))
 * Math of Neural Network ([Video](https://www.youtube.com/watch?v=-2sV2GWr1fk))
 * Implementing Neural Network from Scratch in minimal Python Code (NO THIRD-PARTY LIBRARY) ([Video](https://www.youtube.com/watch?v=TZfBukQO-A0&list=PLJNMCL_eahmQ70zZECr2cTDLwrXJ-RpgW&index=9))
-* A simple Neural Network is just to transform data with $N$ linear functions nested with non-linear functions (e.g., sigmoid), do such transformation **again** with a different $N$, do such transformation **again** with a different $N$, ... : 
-  * See [10 - Deep Learning](10-neural-network.ipynb). 
+* A simple Neural Network is just to transform data with $N$ linear functions nested with non-linear functions (e.g., sigmoid), do such transformation **again** with a different $N$, do such transformation **again** with a different $N$, ... 
   <!-- * $N$ is called the number of neurons.
   * The number of "agains" is the number of layers. -->
   <!-- + Beyond the scope of this couse: it can be applied for Dimension Reduction and Self-supervised Learning.  -->

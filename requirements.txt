@@ -3,4 +3,3 @@ scikit-learn
 scipy
 pandas
 matplotlib
-yellowbrick
