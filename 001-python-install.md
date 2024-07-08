@@ -1,15 +1,13 @@
 
-## 1. OS-Specific Steps
 Is your laptop equiped with NVIDIA GPUs or Apple Metal chips?
+* If yes, follow all the steps 1, 2, 3, 4
+* If no, use Google Colab, and only follow Step 3
+## 1. OS-Specific Steps
 
-If yes, follow the instruction below:
 * For Mac with Apple Metal chips, do nothing
 * For Windows users and old Mac with Nvidia GPUs, install WSL and CUDA. For details, you can refer to [my early Windows Setting Steps in 2021](https://medium.com/gitconnected/build-the-environment-for-deep-learning-in-windows-11-subsystem-of-linux-wsl-f26ffc4548b2).
     > For Windows users, it is likely that many issues happen during installation. Unless you have a very powerful GPU, better directly use Google Colab
 * For old Mac with Nvidia GPUs, just install CUDA
-
-If no, use Google Colab
-
 
 ## 2. (For those using local PCs or Mac) Set up a Python Virtual Environment Using Conda
 * Install conda: Find the bash command for your OS on [the web page](https://docs.anaconda.com/free/miniconda/#quick-command-line-install)
