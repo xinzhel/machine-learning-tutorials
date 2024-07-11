@@ -32,6 +32,7 @@ Is your laptop equiped with NVIDIA GPUs or Apple Metal chips?
     pip install scipy
     pip install pandas
     pip install matplotlib
+    pip install tensorflow_datasets
     ```
 > if you want to run the commands above in your notebook, add the prefix "!" 
     ```
@@ -40,6 +41,7 @@ Is your laptop equiped with NVIDIA GPUs or Apple Metal chips?
     !pip install scipy
     !pip install pandas
     !pip install matplotlib
+    !pip install tensorflow_datasets
     ```
 * or run the command below if the working directory contains the file `requirements.txt` with the required packages
     ```
@@ -61,3 +63,5 @@ Is your laptop equiped with NVIDIA GPUs or Apple Metal chips?
     ```
     pip install pytorch==2.3.0
     ```
+
+
