@@ -118,11 +118,24 @@ $$\hat{y_i} = \hat{\beta_0} + \hat{\beta_1} x_i$$
 * Bias and Variance are the underlying causes of Underfitting and Overfitting ([Notebook](009-bias-var.ipynb))
 * Ensemble Models Reduce Variance ([Notebook](009-regularization-decision-tree.ipynb))
 
-## Topic 9: Neural Network ([Notebook](010-neural-network.ipynb))
+## Topic 9: Neural Network
+### Topic 9.1: Feedforward Neural Network  ([Notebook](010-neural-network.ipynb))
 * Math of Neural Network ([Video](https://www.youtube.com/watch?v=-2sV2GWr1fk))
-* Implementing Neural Network from Scratch in minimal Python Code (NO THIRD-PARTY LIBRARY) ([Video](https://www.youtube.com/watch?v=TZfBukQO-A0&list=PLJNMCL_eahmQ70zZECr2cTDLwrXJ-RpgW&index=9))
+* Implementing Neural Network from Scratch in minimal Python Code (NO THIRD-PARTY LIBRARY) ([Notebook](010-neural-network-autodiff.ipynb); [Video](https://www.youtube.com/watch?v=TZfBukQO-A0&list=PLJNMCL_eahmQ70zZECr2cTDLwrXJ-RpgW&index=9))
 * A simple Neural Network is just to transform data with $N$ linear functions nested with non-linear functions (e.g., sigmoid), do such transformation **again** with a different $N$, do such transformation **again** with a different $N$, ... 
   <!-- * $N$ is called the number of neurons.
   * The number of "agains" is the number of layers. -->
   <!-- + Beyond the scope of this couse: it can be applied for Dimension Reduction and Self-supervised Learning.  -->
   <!-- + Examples exist in language intelligence: [Word2vec](https://arxiv.org/abs/1301.3781), Auto-Regressive Language Models (AR-LMs) and Auto-Encoding Language Models (AE-LMs). Although they utilize techniques reminiscent of supervised learning, this classification arises because the supervisory signals are derived internally from the data itself, rather than relying on external labels.  -->
+
+## Topic 10: Automatic Differentiation 
+* Python Implementations
+  + Manual Work in minimal Python Code (NO THIRD-PARTY LIBRARY) ([Notebook](010-neural-network-autodiff.ipynb))
+  + in Tensorflow ([Notebook](010-autodiff-tensorflow.ipynb))
+  + in PyTorch ([Notebook](010-autodiff-pytorch.ipynb))
+* More Resources
+    * [Pytorch AutoGrad Guide](https://pytorch.org/docs/stable/autograd.html#default-grad-layouts)
+    * [Github: Autograd Tutorial](https://github.com/HIPS/autograd/blob/master/docs/tutorial.md)
+    * [A Survey on Automatic Differentiation](https://www.jmlr.org/papers/volume18/17-468/17-468.pdf)
+
+
