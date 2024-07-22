@@ -96,21 +96,21 @@ $$\hat{y_i} = \hat{\beta_0} + \hat{\beta_1} x_i$$
   * MLE Solution: Specifically, if you assume that the errors $\varepsilon$ in the regression equation $y=\hat{\beta_1}^T \mathbf{x}+\hat{\beta_0}+\varepsilon$ are normally distributed with mean 0 and some variance $\sigma^2$, then the goal of linear regression is to find the parameters ( $\hat{\beta_0}$ and $\hat{\beta_1}$ ) that maximize the likelihood of observing the given data. 
   * OLS: This is equivalent to minimizing the sum of squared residuals, which is the ordinary least squares (OLS) objective. The connection between OLS and MLE under the assumption of normally distributed errors is a fundamental concept in statistical learning.
     $$\sum_{i=1}^n\left(y_i- (\hat{\beta_0} + \hat{\beta_1} x_i)\right)^2$$
-  * How to find the optimal $\hat{\beta_1}$ and $\hat{\beta_1}$?
+  * How to find the optimal $\hat{\beta_1}$ and $\hat{\beta_1}$? ( [Video](https://www.youtube.com/watch?v=6o3TGLABTHc))
     * Hint: Both the function w.r.t. $\hat{\beta_1}$ and the function w.r.t. $\hat{\beta_0}$ are continuous, differentiable, convex 
   <!-- If a convex function has a minimum, that minimum occurs where its derivative is zero. -->
-    * Go through [recoding](https://www.youtube.com/watch?v=6o3TGLABTHc)
+
 * Reference
     * [Deep Learning Chapter 5.1.4](https://github.com/janishar/mit-deep-learning-book-pdf/tree/master/complete-book-bookmarked-pdf)
     * [Derivative Rules](https://www.mathsisfun.com/calculus/derivatives-rules.html)
     * [Variance Derivation](https://www.kellogg.northwestern.edu/faculty/weber/decs-433/Notes_4_Random_variability.pdf)
 
-### Topic 8.3: Logistic Regression for Classification ([Recoding](https://www.youtube.com/watch?v=trFqQP9hyJU); [Post/Article](https://medium.com/@sergioli/from-theory-to-code-maximum-likelihood-estimation-for-classification-tasks-6ecd8d075eed))
+### Topic 8.3: Logistic Regression for Classification ([Video](https://www.youtube.com/watch?v=trFqQP9hyJU); [Post/Article](https://medium.com/@sergioli/from-theory-to-code-maximum-likelihood-estimation-for-classification-tasks-6ecd8d075eed))
 * Implementation of Logistic Regression: See [the Python module](my_ml_package/classification.py)
 * Testing Logistic Regression ([Notebook](006-classification-logistic-reg.ipynb))
 * Evaluation Metrics ([Notebook](006-classification-eval.ipynb))
 
-### Topic 8.4: Support Vector Machine (Recoding will be released soon.)
+### Topic 8.4: Support Vector Machine ([Video](https://www.youtube.com/watch?v=OOCneTq4Tuk))
 
 ### Topic 8.5: Decision Tree (Recoding will be released soon.)
 
@@ -130,12 +130,12 @@ $$\hat{y_i} = \hat{\beta_0} + \hat{\beta_1} x_i$$
 
 ## Topic 10: Automatic Differentiation 
 * Python Implementations
-  + Manual Work in minimal Python Code (NO THIRD-PARTY LIBRARY) ([Notebook](010-neural-network-autodiff.ipynb))
+  + Manual Work in minimal Python Code (NO THIRD-PARTY LIBRARY) ([Notebook](010-neural-network-autodiff.ipynb); [Reading](https://www.csie.ntu.edu.tw/~cjlin/papers/autodiff/autodiff.pdf))
   + in Tensorflow ([Notebook](010-autodiff-tensorflow.ipynb))
   + in PyTorch ([Notebook](010-autodiff-pytorch.ipynb))
 * More Resources
     * [Pytorch AutoGrad Guide](https://pytorch.org/docs/stable/autograd.html#default-grad-layouts)
     * [Github: Autograd Tutorial](https://github.com/HIPS/autograd/blob/master/docs/tutorial.md)
-    * [A Survey on Automatic Differentiation](https://www.jmlr.org/papers/volume18/17-468/17-468.pdf)
+    * [A Survey on Automatic Differentiation](https://www.jmlr.org/papers/volume18/17-468/17-468.pdf) 
 
 
