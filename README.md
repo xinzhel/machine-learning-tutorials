@@ -107,8 +107,10 @@ $$\hat{y_i} = \hat{\beta_0} + \hat{\beta_1} x_i$$
 
 ### Topic 8.3: Logistic Regression for Classification ([Video](https://www.youtube.com/watch?v=trFqQP9hyJU); [Post/Article](https://medium.com/@sergioli/from-theory-to-code-maximum-likelihood-estimation-for-classification-tasks-6ecd8d075eed))
 * Implementation of Logistic Regression: See [the Python module](my_ml_package/classification.py)
+* Optimization via Gradient Descent ([Video](https://www.youtube.com/watch?v=CjJy15BguC0))
 * Testing Logistic Regression ([Notebook](006-classification-logistic-reg.ipynb))
 * Evaluation Metrics ([Notebook](006-classification-eval.ipynb))
+
 
 ### Topic 8.4: Support Vector Machine ([Video](https://www.youtube.com/watch?v=OOCneTq4Tuk))
 
