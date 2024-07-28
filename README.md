@@ -1,7 +1,7 @@
 
 This document serves as a comprehensive course outline, providing an overview of each lecture's main topics, with direct links to specific codes, reading materials, and other resources for in-depth study. 
 
-> Disclaimer: The notebooks within the `dl_in_tensorflow_tutorials` directory were not created by me. Their legal usage is maintained by the Deakin University School of Information Technology. These materials are provided here for the convenience of students enrolled in SIT319 - Deep Learning.
+> Disclaimer: All the notebooks in the root directories are created and maintained by myself. However, the notebooks within the `dl_in_tensorflow_tutorials` directory were created by Deakin University School of Information Technology for students enrolled in SIT319 - Deep Learning. 
 
 ## Topic 1: Machine Learning Paradigms ([Video](https://www.youtube.com/watch?v=acqzti1U3bo&list=PLJNMCL_eahmQ70zZECr2cTDLwrXJ-RpgW&index=1))
 * Supervised Learning, Unsupervised Learning, and Reinforcement Learning ([Section 1 of The Article](https://medium.com/@sergioli/from-simple-to-complex-a-complete-overview-of-reinforcement-learning-599a8c1ea689))
