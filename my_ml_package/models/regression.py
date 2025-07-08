@@ -1,49 +1,5 @@
 import numpy as np
-
-def mean_squared_error(y_true, y_pred):
-    """
-    Parameters:
-    - y_true: numpy array of true target values.
-    - y_pred: numpy array of predicted target values.
-
-    Returns:
-    - mse: Mean Squared Error of the model's predictions.
-    """
-    return np.mean((y_true - y_pred) ** 2)
-
-def mean_absolute_error(y_true, y_pred):
-    """
-    Parameters:
-    - y_true: numpy array of true target values.
-    - y_pred: numpy array of predicted target values.
-
-    Returns:
-    - mae: Mean Absolute Error of the model's predictions.
-    """
-    return np.mean(np.abs(y_true - y_pred))
-
-def r2_score(y_true, y_pred):
-    """
-    Parameters:
-    - y_true: numpy array of true target values.
-    - y_pred: numpy array of predicted target values.
-
-    Returns:
-    - r2: R-squared value of the model's predictions.
-    """
-    # Calculate the mean of the true target values
-    y_true_mean = np.mean(y_true)
-
-    # Calculate the total sum of squares
-    ss_total = np.sum((y_true - y_true_mean) ** 2)
-
-    # Calculate the residual sum of squares
-    ss_res = np.sum((y_true - y_pred) ** 2)
-
-    # Calculate the R-squared value
-    r2 = 1 - (ss_res / ss_total)
-
-    return r2
+from ..metrics import mean_squared_error, r2_score, variance_in_cv_scores
 
 def ols_estimate_for_linear_regression(X, Y):
     """
@@ -78,7 +34,7 @@ def ols_estimate_for_linear_regression(X, Y):
     - beta_0: Estimated intercept of the regression line.
     - beta_1: Estimated slope of the regression line.
     """
-      # numerator = np.sum(np.multiply(X - X_mean, Y - Y_mean))
+    # numerator = np.sum(np.multiply(X - X_mean, Y - Y_mean))
     # denominator = np.sum(np.power(X - X_mean, 2))
     # beta_1 = numerator / denominator
 
@@ -94,9 +50,13 @@ def ols_estimate_for_linear_regression(X, Y):
 
     return beta_0, beta_1
 
-if __file__ == "__main__":
-    import pandas as pd
-    df = pd.read_csv("data/house-prices/train.csv") # from https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/data
-    x = df['GrLivArea'] # Above grade (ground) living area square feet
-    y = df['SalePrice']
-    ols_estimate_for_linear_regression(x, y)
+
+import pandas as pd
+df = pd.read_csv("data/house-prices/train.csv") # from https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/data
+x = df['GrLivArea'] # Above grade (ground) living area square feet
+y = df['SalePrice']
+beta_0, beta_1 = ols_estimate_for_linear_regression(x, y)
+predictions = beta_0 + beta_1 * x
+error  = mean_squared_error(y, predictions)
+print("Error: ", error)
+    
