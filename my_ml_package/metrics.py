@@ -1,4 +1,5 @@
 from sklearn.model_selection import KFold, cross_val_score
+from sklearn import cluster
 import numpy as np
 
 
@@ -57,3 +58,12 @@ def variance_in_cv_scores(model, X, y):
     # Calculate and return variability measures
     std_deviation = np.std(scores)
     return std_deviation
+
+def purity_score(y_true, y_pred):
+    """
+    Purity = (1 / N) * sum_k max_j |ω_k ∩ c_j|
+    where ω_k is the set of points in cluster k
+    and c_j is the set of points in class j.
+    """
+    C = cluster.contingency_matrix(y_true, y_pred)
+    return np.sum(np.max(C, axis=0)) / np.sum(C)
