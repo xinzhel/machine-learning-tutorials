@@ -43,7 +43,7 @@ def ols_estimate_for_linear_regression(X, Y):
     Y_mean = np.mean(Y)
 
     # Calculate beta_1 (slope)
-    beta_1 = np.sum((X - X_mean) * (Y - Y_mean)) / np.sum((X - X_mean) ** 2)
+    beta_1 = np.sum((X - X_mean) * (Y - Y_mean)) / np.sum((X - X_mean) ** 2)# N*Var
 
     # Calculate beta_0 (intercept)
     beta_0 = Y_mean - beta_1 * X_mean
