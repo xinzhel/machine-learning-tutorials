@@ -2,6 +2,8 @@ from sklearn.model_selection import KFold, cross_val_score
 from sklearn import cluster
 import numpy as np
 
+def accuracy(y_true, y_pred):
+    return np.mean(y_true == y_pred)
 
 def mean_squared_error(y_true, y_pred):
     """
